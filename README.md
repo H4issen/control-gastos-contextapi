@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# Planificador de Gastos — Controla tu presupuesto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¿Sabes exactamente cuánto has gastado este mes? ¿Te queda claro en qué se va tu dinero? Esta app te ayuda a **planificar un presupuesto mensual** y registrar cada gasto para que siempre sepas cuánto te queda.
 
-Currently, two official plugins are available:
+## ¿Qué hace?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Define un presupuesto mensual y empieza a registrar tus gastos por categorías (comida, casa, salud, ocio, ahorro, etc.). La app te muestra:
 
-## Expanding the ESLint configuration
+- Un **gráfico circular** con el progreso de tu gasto vs presupuesto
+- El **saldo restante** actualizado en tiempo real
+- Tus gastos ordenados y **filtrables por categoría**
+- Cada gasto con **fecha, monto, categoría y nombre**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ¿Qué problemas resuelve?
 
-- Configure the top-level `parserOptions` property like this:
+| Sin control                                    | Con este planificador                    |
+|------------------------------------------------|------------------------------------------|
+| No sabes en qué se fue tu quincena             | Ves cada gasto por categoría             |
+| Llevas cuentas en papel o mental               | Todo digital, actualizado al instante    |
+| Difícil saber cuánto te queda                 | El saldo restante se calcula solo        |
+| No puedes identificar fugas de dinero          | Filtra por categoría y detecta patrones  |
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Posibles mejoras futuras
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Múltiples presupuestos (uno por mes)
+- Exportar gastos a PDF o Excel
+- Alertas cuando te acerques al límite
+- Modo oscuro y personalización visual
+- Sincronización en la nube entre dispositivos
+- Registro de ingresos además de gastos
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Stack técnico
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+React + TypeScript + Context API + useReducer + Tailwind CSS + Vite. Desplegable en GitHub Pages.
+
+```bash
+npm install
+npm run dev      # desarrollo
+npm run deploy   # publicar
